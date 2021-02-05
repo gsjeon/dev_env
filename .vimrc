@@ -4,7 +4,8 @@ execute pathogen#infect()
 filetype plugin indent on
 
 "Flake8 문법검사기
-autocmd FileType python map <buffer> <F8> :call Flake8()<CR>
+autocmd BufWritePost *.py call flake8#Flake8()
+autocmd FileType python map <buffer> <F7> :call Flake8()<CR>
 let g:flake8_max_markers=500  " maximum # of markers to show(500 is default)
 
 
@@ -16,7 +17,6 @@ set ts=4						"tabstop
 set sts=4						"softtabstop
 set sw=4						"shiftwidth
 set hlsearch					"검색어 하이라이팅
-set nu							"줄번호
 set autoindent					"자동 들여쓰기
 set laststatus=2				"상태바 항상 표시
 set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\
@@ -33,4 +33,3 @@ au BufReadPost *
 
 "구문 강조 사용
 syntax on
-colorscheme industry
