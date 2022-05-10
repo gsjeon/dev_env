@@ -32,3 +32,4 @@ au BufReadPost *
 
 "구문 강조 사용
 syntax on
+color desert
